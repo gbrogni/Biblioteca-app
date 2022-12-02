@@ -1,0 +1,36 @@
+<div class="mat-elevation-z4">
+    <table mat-table [dataSource]="editoras">
+      <!-- Id Column -->
+      <ng-container matColumnDef="codEditora">
+        <th mat-header-cell *matHeaderCellDef>Código da editora</th>
+        <td mat-cell *matCellDef="let row">{{row.codEditora}}</td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="nomeEditora">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let row">{{row.nomeEditora}}</td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Ações</th>
+      <td mat-cell *matCellDef="let row">
+        <a routerLink="/editora/update/{{ row.codEditora }}" class="edit">
+            <i class="material-icons" color="primary">
+                edit
+            </i>
+        </a>
+        <a routerLink="/editora/delete/{{ row.codEditora }}" class="delete">
+            <i class="material-icons" color="primary">
+                delete
+            </i>
+        </a>
+      </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  

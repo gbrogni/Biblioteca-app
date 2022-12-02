@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-title>Novo item</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="item.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Escolha um tipo de item</mat-label>
+  <mat-select type="string" [(ngModel)]="item.nome">
+    <mat-option value="Livro"> Livro </mat-option>
+    <mat-option value="Revista">Revista</mat-option>
+    <mat-option value="Jornal">Jornal</mat-option>
+    <mat-option value="DVD/CD">DVD/CD</mat-option>
+    <mat-option value="Folheto">Folheto</mat-option>
+    <mat-option value="Artigo">Artigo</mat-option>
+  </mat-select>
+        </mat-form-field>
+  <mat-select type="string" [(ngModel)]="item.codAutor">
+        
+  </mat-select>    
+    </form>
+</mat-card>
+<!-- <p-dropdown [options]="autores" [(ngModel)]="autor.codAutor" optionLabel="name" [filter]="true" filterBy="name"
+	[showClear]="true" placeholder="Autor">
+	<ng-template pTemplate="selectedItem">
+		<div class="country-item country-item-value" *ngIf="autor.codAutor">
+			<div>{{item.codAutor}}</div>
+		</div>
+	</ng-template>
+	<ng-template let-country pTemplate="item">
+		<div class="country-item">
+			<div>{{item.codAutor}}</div>
+		</div>
+	</ng-template>
+</p-dropdown> -->

@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title>Novo autor</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="autor.nomeAutor" name="nomeAutor">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [(ngModel)]="autor.descricao" name="descricao">
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button mat-raised-button (click)="createAutor()" color="primary">
+    Salvar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>

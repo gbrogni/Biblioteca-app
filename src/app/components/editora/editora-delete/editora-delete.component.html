@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title>Excuir editora</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [value]="editora.nomeEditora" name="nomeEditora" disabled>
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button mat-raised-button (click)="deleteEditora()" color="primary">
+    Excluir
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>

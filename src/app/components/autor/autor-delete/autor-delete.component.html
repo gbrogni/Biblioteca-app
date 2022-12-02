@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-title>Excuir autor</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [value]="autor.nomeAutor" name="nomeAutor" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [value]="autor.descricao" name="descricao" disabled>
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button mat-raised-button (click)="deleteAutor()" color="primary">
+    Excluir
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>

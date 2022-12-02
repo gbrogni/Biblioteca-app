@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title>Editar seção</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [(ngModel)]="secao.descricao" name="descricao">
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button mat-raised-button (click)="updateSecao()" color="primary">
+    Atualizar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>
