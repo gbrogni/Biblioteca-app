@@ -1,0 +1,46 @@
+<mat-card>
+    <mat-card-title>Excluir item</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="item.nome" name="nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Tipo de item" [(ngModel)]="item.tipoItem" name="tipoItem" disabled>
+        </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Autor" [(ngModel)]="item.codAutor" name="nomeAutor" disabled>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Editora" [(ngModel)]="item.codEditora" name="nomeEditora" disabled>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Local" [(ngModel)]="item.codLocal" name="descricao" disabled>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Seção" [(ngModel)]="item.codSecao" name="descricao" disabled>
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Número do exemplar" [(ngModel)]="item.numExemplar" name="numExemplar" disabled>
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Volume" [(ngModel)]="item.volume" name="volume" disabled>
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Ano da edição" [(ngModel)]="item.edicao" name="edicao" disabled>
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Idioma" [(ngModel)]="item.idioma" name="idioma" disabled>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Status" [(ngModel)]="item.status" name="status" disabled>
+  </mat-form-field>
+    </form>  
+</mat-card>
+
+<button mat-raised-button (click)="deleteItem()" color="primary">
+  Excluir
+</button>
+
+<button mat-raised-button (click)="cancel()">
+  Cancelar
+</button>

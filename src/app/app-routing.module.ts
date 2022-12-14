@@ -20,6 +20,20 @@ import { SecaoUpdateComponent } from './components/secao/secao-update/secao-upda
 import { SecaoDeleteComponent } from './components/secao/secao-delete/secao-delete.component';
 import { ItemCrudComponent } from './views/item-crud/item-crud.component';
 import { ItemCreateComponent } from './components/item/item-create/item-create.component';
+import { ItemUpdateComponent } from './components/item/item-update/item-update.component';
+import { ItemDeleteComponent } from './components/item/item-delete/item-delete.component';
+import { LeitorCreateComponent } from './components/leitor/leitor-create/leitor-create.component';
+import { LeitorCrudComponent } from './views/leitor-crud/leitor-crud.component';
+import { LeitorUpdateComponent } from './components/leitor/leitor-update/leitor-update.component';
+import { LeitorDeleteComponent } from './components/leitor/leitor-delete/leitor-delete.component';
+import { ReservaCreateComponent } from './components/reserva/reserva-create/reserva-create.component';
+import { ReservaCrudComponent } from './views/reserva-crud/reserva-crud.component';
+import { ReservaDeleteComponent } from './components/reserva/reserva-delete/reserva-delete.component';
+import { ConsultasCreateComponent } from './components/consultas/consultas-create/consultas-create.component';
+import { ConsultaCrudComponent } from './views/consulta-crud/consulta-crud.component';
+import { EmprestimoCrudComponent } from './views/emprestimo-crud/emprestimo-crud.component';
+import { EmprestimoCreateComponent } from './components/emprestimo/emprestimo-create/emprestimo-create.component';
+
 
 
 const routes: Routes = [{
@@ -79,6 +93,45 @@ const routes: Routes = [{
 },{
   path: "item/create",
   component: ItemCreateComponent
+},{
+  path: "item/update/:codItem",
+  component: ItemUpdateComponent
+},{
+  path: "item/delete/:codItem",
+  component: ItemDeleteComponent
+},{
+  path: "leitor",
+  component: LeitorCrudComponent
+},{
+  path: "leitor/create",
+  component: LeitorCreateComponent
+},{
+  path: "leitor/update/:codLeitor",
+  component: LeitorUpdateComponent
+},{
+  path: "leitor/delete/:codLeitor",
+  component: LeitorDeleteComponent
+},{
+  path: "reserva",
+  component: ReservaCrudComponent
+},{
+  path: "reserva/create",
+  component: ReservaCreateComponent
+},{
+  path: "reserva/delete/:codReserva",
+  component: ReservaDeleteComponent
+},{
+  path: "consultas",
+  component: ConsultaCrudComponent
+},{
+  path: "consultas/create",
+  component: ConsultasCreateComponent
+},{
+  path: "emprestimo",
+  component: EmprestimoCrudComponent
+},{
+  path: "emprestimo/create",
+  component: EmprestimoCreateComponent
 }
 ];
 

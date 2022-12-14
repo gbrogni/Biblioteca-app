@@ -7,6 +7,7 @@ import { Observable, EMPTY, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { Autor, AutorI } from "./autor.model";
 
+
 @Injectable({
   providedIn: "root",
 })

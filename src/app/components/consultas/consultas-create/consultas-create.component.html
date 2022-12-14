@@ -1,0 +1,43 @@
+<mat-card>
+    <mat-card-title>Filtrar</mat-card-title>
+    <form>
+        <mat-form-field>
+            <mat-label>Nome do item</mat-label>
+            <input matInput type="text" name="search" [(ngModel)]="searchText" placeholder="Digite para pesquisar..." />
+        </mat-form-field>
+    </form>
+  </mat-card>
+  
+  <table class="table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Tipo de item</th>
+            <th>Exemplar</th>
+            <th>Autor</th>
+            <th>Editora</th>
+            <th>Local</th>
+            <th>Seção</th>
+            <th>Situação</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let consulta of consultas | filter:searchText">
+            <td>{{consulta.codItem}}</td>
+            <td>{{consulta.nomeItem}}</td>
+            <td>{{consulta.tipoItem}}</td>
+            <td>{{consulta.numExemplar}}</td>
+            <td>{{consulta.nomeAutor}}</td>
+            <td>{{consulta.nomeEditora}}</td>
+            <td>{{consulta.descricaoLocal}}</td>
+            <td>{{consulta.descricaoSecao}}</td>
+            <td>{{consulta.situacao}}</td>
+        </tr>
+    </tbody>
+  </table>
+  
+  
+  <button mat-raised-button (click)="cancel()">
+    Cancelar
+  </button>

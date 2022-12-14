@@ -1,0 +1,61 @@
+<div class="mat-elevation-z4">
+    <table mat-table [dataSource]="consultas">
+      <!-- Id Column -->
+      <ng-container matColumnDef="codItem">
+        <th mat-header-cell *matHeaderCellDef>Código do item</th>
+        <td mat-cell *matCellDef="let row">{{row.codItem}}</td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="nomeItem">
+        <th mat-header-cell *matHeaderCellDef>Item</th>
+        <td mat-cell *matCellDef="let row">{{row.nomeItem}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="tipoItem">
+      <th mat-header-cell *matHeaderCellDef>Tipo de item</th>
+      <td mat-cell *matCellDef="let row">{{row.tipoItem}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="numExemplar">
+      <th mat-header-cell *matHeaderCellDef>Exemplar</th>
+      <td mat-cell *matCellDef="let row">{{row.numExemplar}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="descricaoLocal">
+        <th mat-header-cell *matHeaderCellDef>Local</th>
+        <td mat-cell *matCellDef="let row">{{row.descricaoLocal}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="nomeAutor">
+      <th mat-header-cell *matHeaderCellDef>Autor</th>
+      <td mat-cell *matCellDef="let row">{{row.nomeAutor}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="nomeEditora">
+      <th mat-header-cell *matHeaderCellDef>Editora</th>
+      <td mat-cell *matCellDef="let row">{{row.nomeEditora}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="descricaoSecao">
+        <th mat-header-cell *matHeaderCellDef>Seção</th>
+        <td mat-cell *matCellDef="let row">{{row.descricaoSecao}}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="situacao">
+        <th mat-header-cell *matHeaderCellDef>Situação</th>
+        <td mat-cell *matCellDef="let row">{{row.situacao}}</td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  

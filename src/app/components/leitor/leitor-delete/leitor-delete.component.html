@@ -1,0 +1,102 @@
+<mat-card>
+    <mat-card-title>Excluir leitor</mat-card-title>
+    <form class="example-form">
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="leitor.nome" name="nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Sexo</mat-label>
+  <mat-select type="string" [(ngModel)]="leitor.sexo" name="sexo" disabled>
+    <mat-option value="Masculino"> Masculino </mat-option>
+    <mat-option value="Feminino">Feminino</mat-option>
+  </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="example-form-field"  name="dataNascimento" [(ngModel)]="leitor.dataNascimento" ngDefaultControl>
+    <mat-label>Data de nascimento</mat-label>
+    <input matInput [matDatepicker]="datepicker" disabled>
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="datepicker" disabled></mat-datepicker-toggle>
+    <mat-datepicker #datepicker>
+      <mat-datepicker-actions>
+        <button mat-button matDatepickerCancel>Cancelar</button>
+        <button mat-raised-button color="primary" matDatepickerApply>Aplicar</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="CPF" [(ngModel)]="leitor.cpf" name="cpf" disabled>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="RG" [(ngModel)]="leitor.rg" name="rg" disabled>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Email" [(ngModel)]="leitor.email" name="email" disabled>
+</mat-form-field>
+<mat-form-field class="example-full-width">
+    <mat-label>Telefone</mat-label>
+    <span matPrefix>+55 &nbsp;</span>
+    <input type="tel" matInput placeholder="" [(ngModel)]="leitor.telefone" name="telefone" disabled>
+    <mat-icon matSuffix></mat-icon>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Celular</mat-label>
+    <span matPrefix>+55 &nbsp;</span>
+    <input type="tel" matInput placeholder="" [(ngModel)]="leitor.celular" name="celular" disabled>
+    <mat-icon matSuffix></mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Rua" [(ngModel)]="leitor.enderecoRua" name="enderecoRua" disabled>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Bairro" [(ngModel)]="leitor.enderecoBairro" name="enderecoBairro" disabled>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Cidade" [(ngModel)]="leitor.enderecoCidade" name="enderecoCidade" disabled>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="Número" [(ngModel)]="leitor.enderecoNumero" name="enderecoNumero" disabled>
+</mat-form-field>
+<mat-form-field>
+    <mat-label>UF</mat-label>
+<mat-select type="string" [(ngModel)]="leitor.uf" name="uf" disabled>
+<mat-option value="AC"> AC </mat-option>
+<mat-option value="AL">AL</mat-option>
+<mat-option value="AP">AP</mat-option>
+<mat-option value="AM">AM</mat-option>
+<mat-option value="BA">BA</mat-option>
+<mat-option value="CE">CE</mat-option>
+<mat-option value="DF">DF</mat-option>
+<mat-option value="ES">ES</mat-option>
+<mat-option value="GO">GO</mat-option>
+<mat-option value="MA">MA</mat-option>
+<mat-option value="MT">MT</mat-option>
+<mat-option value="MS">MS</mat-option>
+<mat-option value="MG">MG</mat-option>
+<mat-option value="PA">PA</mat-option>
+<mat-option value="PB">PB</mat-option>
+<mat-option value="PR">PR</mat-option>
+<mat-option value="PE">PE</mat-option>
+<mat-option value="PI">PI</mat-option>
+<mat-option value="RJ">RJ</mat-option>
+<mat-option value="RN">RN</mat-option>
+<mat-option value="RS">RS</mat-option>
+<mat-option value="RO">RO</mat-option>
+<mat-option value="RR">RR</mat-option>
+<mat-option value="SC">SC</mat-option>
+<mat-option value="SP">SP</mat-option>
+<mat-option value="SE">SE</mat-option>
+<mat-option value="TO">TO</mat-option>
+</mat-select>
+</mat-form-field>
+<mat-form-field>
+    <input matInput placeholder="CEP" [(ngModel)]="leitor.cep" name="cep" disabled>
+</mat-form-field>
+    </form>
+</mat-card>
+<button mat-raised-button (click)="deleteLeitor()" color="primary">
+    Excluir
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>

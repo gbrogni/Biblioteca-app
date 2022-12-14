@@ -6,7 +6,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Escolha um tipo de item</mat-label>
-  <mat-select type="string" [(ngModel)]="item.nome">
+  <mat-select type="string" [(ngModel)]="item.tipoItem" name="tipoItem">
     <mat-option value="Livro"> Livro </mat-option>
     <mat-option value="Revista">Revista</mat-option>
     <mat-option value="Jornal">Jornal</mat-option>
@@ -14,22 +14,57 @@
     <mat-option value="Folheto">Folheto</mat-option>
     <mat-option value="Artigo">Artigo</mat-option>
   </mat-select>
-        </mat-form-field>
-  <mat-select type="string" [(ngModel)]="item.codAutor">
-        
+  </mat-form-field>
+  <mat-form-field>
+          <mat-label>Autor</mat-label>
+          <mat-select type="string" [(ngModel)]="item.codAutor" name="codAutor">
+          <mat-option *ngFor="let autor of Autores " [value]="autor.codAutor" >{{ autor.nomeAutor }}</mat-option>   
   </mat-select>    
-    </form>
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Editora</mat-label>
+  <mat-select type="string" [(ngModel)]="item.codEditora" name="codEditora">
+  <mat-option *ngFor="let editora of Editoras " [value]="editora.codEditora" >{{ editora.nomeEditora }}</mat-option>   
+</mat-select>    
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Local</mat-label>
+  <mat-select type="string" [(ngModel)]="item.codLocal" name="codLocal">
+  <mat-option *ngFor="let local of Locais " [value]="local.codLocal" >{{ local.descricao }}</mat-option>   
+</mat-select>    
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Secao</mat-label>
+  <mat-select type="string" [(ngModel)]="item.codSecao" name="codSecao">
+  <mat-option *ngFor="let secao of Secoes " [value]="secao.codSecao" >{{ secao.descricao }}</mat-option>   
+</mat-select>    
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Número do exemplar" [(ngModel)]="item.numExemplar" name="numExemplar">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Volume" [(ngModel)]="item.volume" name="volume">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Ano da edição" [(ngModel)]="item.edicao" name="edicao">
+</mat-form-field>
+<mat-form-field>
+  <input matInput placeholder="Idioma" [(ngModel)]="item.idioma" name="idioma">
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Este item está...</mat-label>
+<mat-select type="string" [(ngModel)]="item.status" name="status">
+<mat-option value="Disponível"> Disponível </mat-option>
+<mat-option value="Reservado"> Reservado </mat-option>
+</mat-select>
+</mat-form-field>
+    </form>  
 </mat-card>
-<!-- <p-dropdown [options]="autores" [(ngModel)]="autor.codAutor" optionLabel="name" [filter]="true" filterBy="name"
-	[showClear]="true" placeholder="Autor">
-	<ng-template pTemplate="selectedItem">
-		<div class="country-item country-item-value" *ngIf="autor.codAutor">
-			<div>{{item.codAutor}}</div>
-		</div>
-	</ng-template>
-	<ng-template let-country pTemplate="item">
-		<div class="country-item">
-			<div>{{item.codAutor}}</div>
-		</div>
-	</ng-template>
-</p-dropdown> -->
+
+<button mat-raised-button (click)="createItem()" color="primary">
+  Salvar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+  Cancelar
+</button>

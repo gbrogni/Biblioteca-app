@@ -1,0 +1,40 @@
+<mat-card>
+    <mat-card-title>Devolver item</mat-card-title>
+    <form>
+
+    <mat-form-field>
+        <input matInput placeholder="Nome" [(ngModel)]="reserva.codItem" name="nome" disabled>  
+  </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Local" [(ngModel)]="reserva.codLocal" name="codLocal" disabled>  
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Leitor" [(ngModel)]="reserva.codLeitor" name="codLeitor" disabled>  
+</mat-form-field>
+
+<mat-form-field>
+    <mat-label>Data da reserva</mat-label>
+    <input matInput type="date" [(ngModel)]="reserva.dataReserva" name="dataReserva" disabled>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Prazo de devolução</mat-label>
+    <input matInput type="date" [(ngModel)]="reserva.prazoReserva" name="prazoReserva" disabled>
+  </mat-form-field>
+
+<mat-form-field>
+    <input matInput placeholder="Situação" [(ngModel)]="reserva.situacao" name="situacao" disabled>  
+</mat-form-field>
+
+    </form>
+</mat-card>
+
+
+<button mat-raised-button (click)="deleteReserva()" color="primary">
+  Devolver
+</button>
+
+<button mat-raised-button (click)="cancel()">
+  Cancelar
+</button> 

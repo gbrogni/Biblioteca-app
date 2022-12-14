@@ -6,6 +6,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, EMPTY, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { Item } from "./item.model";
+import { Editora } from '../editora/editora.model';
+import { Local } from '../local/local.model';
+import { Secao } from '../secao/secao.model';
 
 
 @Injectable({
@@ -16,13 +19,15 @@ export class ItemService {
   
   baseUrl = "https://localhost:7203/itens";
   autorUrl = "https://localhost:7203/autores";
+  editoraUrl = "https://localhost:7203/editoras";
+  localUrl = "https://localhost:7203/locais";
+  secaoUrl = "https://localhost:7203/secoes";
   defaultRoute = "api/Item";
   
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': "*" })
   }
-
 
   constructor(private snackBar: MatSnackBar, private httpClient: HttpClient) {}
 
@@ -45,11 +50,35 @@ export class ItemService {
     )
   }
 
+  getEditoras(): Observable<Editora[]>{
+    return this.httpClient.get<Editora[]>(this.editoraUrl).pipe( catchError(this.handleError)
+    )
+  }
+
+  getLocais(): Observable<Local[]>{
+    return this.httpClient.get<Local[]>(this.localUrl).pipe( catchError(this.handleError)
+    )
+  }
+
+  getSecoes(): Observable<Secao[]>{
+    return this.httpClient.get<Secao[]>(this.secaoUrl).pipe( catchError(this.handleError)
+    )
+  }
+
   createItem(item: Item): Observable<Item>{
     return this.httpClient.post<Item>(this.baseUrl , item);  
   }
 
   readById(codItem: string): Observable<Item> {
+    console.log(codItem)
+    const url = `${this.baseUrl}/${codItem}`
+    return this.httpClient.get<Item>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  readItemById(codItem: string): Observable<Item> {
     console.log(codItem)
     const url = `${this.baseUrl}/${codItem}`
     return this.httpClient.get<Item>(url).pipe(

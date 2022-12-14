@@ -10,7 +10,7 @@
     </form>
 </mat-card>
 
-<button mat-raised-button (click)="createAutor()" color="primary">
+<button mat-raised-button (click)="createAutor()" color="primary" [disabled]="autor.nomeAutor== '' && autor.descricao == ''">
     Salvar
 </button>
 

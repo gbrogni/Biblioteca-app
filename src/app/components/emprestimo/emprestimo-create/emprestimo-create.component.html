@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-title>Filtrar</mat-card-title>
+    <form>
+        <mat-form-field>
+            <mat-label>Nome do item</mat-label>
+            <input matInput type="text" name="search" [(ngModel)]="searchText" placeholder="Digite para pesquisar..." />
+        </mat-form-field>
+    </form>
+  </mat-card>
+  
+  <table class="table">
+    <thead>
+        <tr>
+            <th>Código da reserva</th>
+            <th>Código do item</th>
+            <th>Nome</th>
+            <th>Tipo de item</th>
+            <th>Data da reserva</th>
+            <th>Prazo de devolução</th>
+            <th>Autor</th>
+            <th>Editora</th>
+            <th>Local</th>
+            <th>Seção</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emprestimo of emprestimos | filter:searchText">
+            <td>{{emprestimo.codReserva}}</td>
+            <td>{{emprestimo.codItem}}</td>
+            <td>{{emprestimo.nomeItem}}</td>
+            <td>{{emprestimo.tipoItem}}</td>
+            <td>{{emprestimo.dataReserva | date:'dd-MM-YYYY'}}</td>
+            <td>{{emprestimo.prazoReserva | date:'dd-MM-YYYY'}}</td>
+            <td>{{emprestimo.nomeAutor}}</td>
+            <td>{{emprestimo.nomeEditora}}</td>
+            <td>{{emprestimo.descricaoLocal}}</td>
+            <td>{{emprestimo.descricaoSecao}}</td>
+        </tr>
+    </tbody>
+  </table>
+  
+  
+  <button mat-raised-button (click)="cancel()">
+    Cancelar
+  </button>

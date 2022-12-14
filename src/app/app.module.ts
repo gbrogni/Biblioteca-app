@@ -1,5 +1,10 @@
+import { ConsultasCreateComponent } from './components/consultas/consultas-create/consultas-create.component';
 
-import { NgModule, LOCALE_ID} from '@angular/core';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
+
+import { NgModule, Pipe, PipeTransform } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,7 +15,6 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component'
-
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
@@ -27,10 +31,8 @@ import { MatTableModule } from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import { MatSortModule } from '@angular/material/sort';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
-import localePt from '@angular/common/locales/pt';
-import { registerLocaleData } from '@angular/common';
 import { ComponentsComponent } from './components/components.component';
 import { AutorUpdateComponent } from './components/autor/autor-update/autor-update.component';
 import { AutorDeleteComponent } from './components/autor/autor-delete/autor-delete.component';
@@ -52,6 +54,25 @@ import { SecaoDeleteComponent } from './components/secao/secao-delete/secao-dele
 import { ItemCreateComponent } from './components/item/item-create/item-create.component';
 import { ItemCrudComponent } from './views/item-crud/item-crud.component';
 import { ItemReadComponent } from './components/item/item-read/item-read.component';
+import { ItemUpdateComponent } from './components/item/item-update/item-update.component';
+import { ItemDeleteComponent } from './components/item/item-delete/item-delete.component';
+import { LeitorCreateComponent } from './components/leitor/leitor-create/leitor-create.component';
+import { LeitorReadComponent } from './components/leitor/leitor-read/leitor-read.component';
+import { LeitorCrudComponent } from './views/leitor-crud/leitor-crud.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { LeitorUpdateComponent } from './components/leitor/leitor-update/leitor-update.component';
+import { LeitorDeleteComponent } from './components/leitor/leitor-delete/leitor-delete.component';
+import { ReservaCreateComponent } from './components/reserva/reserva-create/reserva-create.component';
+import { ReservaCrudComponent } from './views/reserva-crud/reserva-crud.component';
+import { ReservaReadComponent } from './components/reserva/reserva-read/reserva-read.component';
+import { ReservaDeleteComponent } from './components/reserva/reserva-delete/reserva-delete.component';
+import { ConsultaCrudComponent } from './views/consulta-crud/consulta-crud.component';
+import { EmprestimoCreateComponent } from './components/emprestimo/emprestimo-create/emprestimo-create.component';
+import { EmprestimoReadComponent } from './components/emprestimo/emprestimo-read/emprestimo-read.component';
+import { EmprestimoCrudComponent } from './views/emprestimo-crud/emprestimo-crud.component';
+import { ConsultasReadComponent } from './components/consultas/consultas-read/consultas-read.component';
+
+
 
 @NgModule({
   declarations: [
@@ -84,7 +105,26 @@ import { ItemReadComponent } from './components/item/item-read/item-read.compone
     ItemCreateComponent,
     ItemCrudComponent,
     ItemReadComponent,
+    ItemUpdateComponent,
+    ItemDeleteComponent,
+    LeitorCreateComponent,
+    LeitorReadComponent,
+    LeitorCrudComponent,
+    LeitorUpdateComponent,
+    LeitorDeleteComponent,
+    ReservaCreateComponent,
+    ReservaCrudComponent,
+    ReservaReadComponent,
+    ReservaDeleteComponent,
+    ConsultaCrudComponent,
+
+    EmprestimoCreateComponent,
+    EmprestimoReadComponent,
+    EmprestimoCrudComponent,
+    ConsultasReadComponent,
+    ConsultasCreateComponent,
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -102,11 +142,14 @@ import { ItemReadComponent } from './components/item/item-read/item-read.compone
     MatTableModule,
     MatDialogModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    Ng2SearchPipeModule,
   ],
-  providers: [{
-    provide: LOCALE_ID,
-    useValue: 'pt-BR'
-  }],
+  // providers: [{
+  //   provide: LOCALE_ID,
+  //   useValue: 'pt-BR'
+  // }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

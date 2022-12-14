@@ -1,0 +1,51 @@
+ <mat-card>
+    <mat-card-title>Nova reserva</mat-card-title>
+    <form>
+        <mat-form-field>
+          <mat-label>Nome do item</mat-label>
+          <mat-select (selectionChange)="loadItem()" type="string" [(ngModel)]="reserva.codItem" name="codItem">
+          <mat-option *ngFor="let item of Itens " [value]="item.codItem"  >{{ item.nome }}</mat-option>   
+  </mat-select> 
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Número do exemplar</mat-label>
+    <input matInput >{{ exportaItem.numExemplar }} 
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tipo de item</mat-label>
+    <input matInput >{{ exportaItem.tipoItem }} 
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Local</mat-label>
+    <input matInput >{{ exportaItem.codLocal }} 
+  </mat-form-field>
+<mat-form-field>
+  <mat-label>Leitor</mat-label>
+  <mat-select type="string" [(ngModel)]="reserva.codLeitor" name="codLeitor">
+  <mat-option *ngFor="let leitor of Leitores " [value]="leitor.codLeitor" >{{ leitor.nome }}</mat-option>   
+</mat-select>    
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput placeholder="Obrigatório deixar como reservado"  [(ngModel)]="reserva.situacao" name="situacao">
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Data da reserva</mat-label>
+  <input matInput type="date" [(ngModel)]="reserva.dataReserva" name="dataReserva">
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Prazo de devolução</mat-label>
+  <input matInput type="date" [(ngModel)]="reserva.prazoReserva" name="prazoReserva">
+</mat-form-field>
+</form>  
+</mat-card> 
+
+<button mat-raised-button (click)="createReserva()" color="primary" [disabled]="reserva.codItem == 0 && reserva.codLeitor == 0 && reserva.situacao == '' && reserva.codLocal == 0 &&
+reserva.dataReserva == null && reserva.prazoReserva == null">
+  Salvar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+  Cancelar
+</button> 

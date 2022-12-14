@@ -7,7 +7,7 @@
     </form>
 </mat-card>
 
-<button mat-raised-button (click)="createSecao()" color="primary">
+<button mat-raised-button (click)="createSecao()" color="primary" [disabled]="secao.descricao === ''">
     Salvar
 </button>
 

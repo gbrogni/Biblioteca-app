@@ -21,15 +21,17 @@ export class ItemReadComponent implements OnInit {
     codAutor: 0,
     codEditora: 0,
     codLocal: 0,
-    codSecao: 0
+    codSecao: 0,
+    status: ''
   }];
-  displayedColumns: string[] = ['codItem', 'nome', 'tipoItem', 'numExemplar', 'volume', 'edicao', 'idioma', 'codAutor', 'codEditora', 'codLocal', 'codSecao', 'action'];
+  displayedColumns: string[] = ['codItem', 'nome', 'tipoItem', 'numExemplar', 'volume', 'edicao', 'idioma', 'codAutor', 'codEditora', 'codLocal', 'codSecao', 'status', 'action'];
 
   constructor(public itemService: ItemService) {
     this.itemService.getItens().subscribe(itens => {this.itens = itens})
    }
 
   ngOnInit(): void {
+    // console.log(this.itens)
   }
 
   ngAfterViewInit(){

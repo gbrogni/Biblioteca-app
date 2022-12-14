@@ -1,0 +1,46 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+button {
+    margin: 20px 15px 0px 0px;
+}
+
+:host ::ng-deep .p-dropdown {
+    width: 14rem;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    border-spacing: 0 1em;
+}
+
+thead th,
+
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
+}  
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  th, td {
+    border: 1px solid black;
+  }
